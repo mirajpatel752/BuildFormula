@@ -4,9 +4,13 @@ const UserTable = props => (
   <table>
     <thead>
       <tr>
-        <th>title</th>
+        <th>First Name</th>
         <br /><br />
-        <th>image</th>
+        <th>Last Name</th>
+        <br /><br />
+        <th>Email</th>
+        <br /><br />
+        <th>phone</th>
         <br /><br />
         <th>description</th>
       </tr>
@@ -15,9 +19,10 @@ const UserTable = props => (
       {props.users.length > 0 ? (
         props.users.map(user => (
           <tr key={user.id}>
-            <td>{user.name}</td><br />
-            <img style={{ height: "70px" }} src={user.img} alt="img" /><br />
-            <td>{user.username}</td><br />
+            <td>{user.fname}</td><br />
+            <td>{user.lname}</td><br />
+            <td>{user.email}</td><br />
+            <td>{user.phone}</td><br />
             <td>
               <button
                 onClick={() => {

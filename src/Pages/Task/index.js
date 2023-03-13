@@ -5,7 +5,7 @@ import UserTable from "./table";
 
 const Task = () => {
   const usersData = [];
-  const initialFormState = { id: null, name: "", username: "" };
+  const initialFormState = { id: null, fname: "", lname: "",email:"",phone:"" ,};
   const [addblog, setAddblog] = useState(false);
   const [show, setShow] = useState(false);
   const [users, setUsers] = useState(usersData);
@@ -31,6 +31,8 @@ const Task = () => {
     setEditing(false);
     setUsers(users.map((user) => (user.id === id ? updatedUser : user)));
   };
+
+  console.log(users,"users")
 
 
   return (

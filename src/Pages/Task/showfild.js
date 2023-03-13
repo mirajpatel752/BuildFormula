@@ -2,7 +2,7 @@ import { Row } from "antd";
 import React, { useState, useEffect } from "react";
 
 const Showfild = (props) => {
-  const initialFormState = { id: null, name: "", username: "" };
+  const initialFormState = { id: null, fname: "", lname: "",email:"",phone:"" ,};
   const [user, setUser] = useState(
     props.editing ? props.currentUser : initialFormState
   );
@@ -32,7 +32,7 @@ const Showfild = (props) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        if (!user.name || !user.username) return;
+        if (!user.fname || !user.lname) return;
         props.editing ? props.updateUser(user.id, user) : props.addUser(user);
         resetAddUser();
       }}
@@ -41,38 +41,38 @@ const Showfild = (props) => {
       <label>First Name</label> <br />
       <input
         type="text"
-        name="name"
+        name="fname"
         className="input-box-task"
-        value={user.name}
+        value={user.fname}
         onChange={(event) => handleInputChange(event, true)}
       />
       <br /> <br />
       <label>Last Name</label> <br />
       <input
         type="text"
-        name="username"
+        name="lname"
         className="input-box-task"
-        value={user.username}
+        value={user.lname}
         onChange={(event) => handleInputChange(event, true)}
       />
       <br /><br />
-      <label>image</label> <br />
+      <label>email</label> <br />
       <input
-        type="file"
+        type="email"
         id="img"
-        name="img"
-        accept="image/*"
-
-        onChange={(event) => handleInputChange(event, false)}
+        name="email"
+        value={user.email}
+        className="input-box-task"
+        onChange={(event) => handleInputChange(event, true)}
       />
       <br />
       <br /> 
-      <label>Email</label> <br />
+      <label>phone number</label> <br />
       <input
-        type="text"
-        name="username"
+        type="number"
+        name="phone"
         className="input-box-task"
-        value={user.username}
+        value={user.phone}
         onChange={(event) => handleInputChange(event, true)}
       />
       <br /> <br />

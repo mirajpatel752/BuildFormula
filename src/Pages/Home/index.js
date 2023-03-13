@@ -6,7 +6,7 @@ const [data ,setData] =useState(JSON.parse(localStorage.getItem('items')) || {})
 
 console.log(data,"data")
 const clearData = ()=>{
-  alert()
+  alert("Are you sure you want to clear")
   localStorage.clear()
   setData({})
 
